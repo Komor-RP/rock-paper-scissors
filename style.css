@@ -1,0 +1,90 @@
+body {
+  background: #c5cbcb;
+  font-family: 'Nunito', sans-serif;
+}
+h1 {
+  font-size: 2.8em;
+}
+h2 {
+  color: #002b2e;
+  font-size: 2em;
+}
+header {
+  text-align: center;
+}
+.gameHeader {
+  text-align: center;
+  margin-top: 10%;
+}
+.game_ui {
+  width: 60%;
+  margin: 0 auto;
+}
+.game_ui #buttons {
+  display: flex;
+  padding-bottom: 30px;
+}
+.game_ui .btn {
+  width: 30%;
+  margin-right: 5%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #9cf7ff;
+  text-align: center;
+  -webkit-transition: all .07s ease;
+    transition: all .07s ease;
+}
+.game_ui .btn:last-child {
+  margin-right: 0;
+}
+.game_ui .btn.hovered {
+  background: #f3feff;
+  border: 3px;
+}
+.game_ui .btn.active {
+  background: #f3feff;
+  border: 3px;
+}
+.btn i {
+  color: #fe9b92;
+  font-size: 70px;
+  padding: 30px 0;
+  transition: all .07s ease;
+  -webkit-transition: all .09s ease;
+}
+.btn.hovered i {
+  transform: scale(1.2);
+}
+.btn.active i {
+
+}
+div#result {
+  display: none;
+}
+#result h2 {
+  text-align: center;
+}
+div#scoreBoard {
+  display: none;
+  /*display: flex;*/
+  overflow-x: scoreBoard;
+}
+table {
+  text-align: center;
+  margin: 0 auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+}
+table thead {
+  font-size: 24px;
+  background: #92fed1;
+}
+table thead th {
+  padding: 20px 20px;
+}
+table, th, td {
+  border: 1px solid #016069;
+  padding: 10px 10px;
+  width: 100px;
+}
