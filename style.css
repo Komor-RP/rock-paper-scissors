@@ -1,5 +1,5 @@
 body {
-  background: #c5cbcb;
+  background: #e1f9ff;
   font-family: 'Nunito', sans-serif;
 }
 h1 {
@@ -27,9 +27,9 @@ header {
 .game_ui .btn {
   width: 30%;
   margin-right: 5%;
-  border: 1px solid #ddd;
+  border: 1px solid ##1cc7d7;
   border-radius: 5px;
-  background: #9cf7ff;
+  background: #93e8ff;
   text-align: center;
   -webkit-transition: all .07s ease;
     transition: all .07s ease;
@@ -38,7 +38,7 @@ header {
   margin-right: 0;
 }
 .game_ui .btn.hovered {
-  background: #f3feff;
+  background: #adedff;
   border: 3px;
 }
 .game_ui .btn.active {
@@ -46,7 +46,7 @@ header {
   border: 3px;
 }
 .btn i {
-  color: #fe9b92;
+  color: #ffaa93;
   font-size: 70px;
   padding: 30px 0;
   transition: all .07s ease;
@@ -54,6 +54,7 @@ header {
 }
 .btn.hovered i {
   transform: scale(1.2);
+  color: #fe6d5f;
 }
 .btn.active i {
 
@@ -78,7 +79,10 @@ table {
 }
 table thead {
   font-size: 24px;
-  background: #92fed1;
+  background: #93ffe0;
+}
+table tbody {
+  background: #c6f3ff;
 }
 table thead th {
   padding: 20px 20px;
@@ -87,4 +91,20 @@ table, th, td {
   border: 1px solid #016069;
   padding: 10px 10px;
   width: 100px;
+}
+
+#gameStart {
+  text-align: center;
+}
+#gameStart button {
+  font-size: 1.5em;
+  padding: 10px 20px;
+  background-color: #93ffe0;
+  border: 1px solid #47ffca;
+  border-radius: 5px;
+  margin-top: 40px;
+
+}
+#gameStart button:hover, #gameStart button:active {
+  background-color: #47ffca;
 }

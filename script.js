@@ -24,7 +24,7 @@ function game() {
 function playRound(playerSelection) {
   let computerSelection = computerPlay();
 	if (playerSelection == computerSelection) {
-    return "tie!";
+    return "Tie!";
   } else if (playerSelection == "rock") {
     if (computerSelection == "scissors") {
       return resultEvaluator("win", playerSelection, computerSelection);
@@ -95,8 +95,7 @@ let gameStarted = false;
 
 
 
-playerScoreDisplay.textContent = playerScore;
-computerScoreDisplay.textContent = computerScore;
+
 
 buttons.forEach(button => button.addEventListener("mouseenter", mouseEnter));
 buttons.forEach(button => button.addEventListener("mouseleave", mouseLeave));
@@ -131,9 +130,25 @@ function onClick(e) {
     computerScoreDisplay.textContent = computerScore;
     buttonClicked.classList.toggle('active');
   }
+  if ((playerScore + computerScore) == 5) {
+    if (playerScore > computerScore) {
+      result.textContent = "You won!";
+    } else {
+      result.textContent = "You lost.";
+    }
+    gameButton.textContent = "Play Again!";
+    gameButton.style.cssText = "display: inline";
+    gameStarted = false;
+  }
+
 }
 function gameStarter(e) {
   e.target.style.cssText = "display: none";
+  playerScore = 0;
+  computerScore = 0;
+  playerScoreDisplay.textContent = playerScore;
+  computerScoreDisplay.textContent = computerScore;
+  result.textContent = "";
   gameStarted = true;
   document.querySelector('div#result').style.cssText = "display: block;";
   document.querySelector('div#scoreBoard').style.cssText = "display: flex;";
