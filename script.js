@@ -1,8 +1,21 @@
 let gamesPlayed;
 let playerScore = 0;
 let computerScore = 0;
-/*game();*/
 
+const buttons = document.querySelectorAll('.btn');
+const result = document.querySelector('h2#result');
+const playerScoreDisplay = document.querySelector("#player");
+const computerScoreDisplay = document.querySelector('#computer');
+const gameButton = document.querySelector('#gameStart button');
+let gameStarted = false;
+
+buttons.forEach(button => button.addEventListener("mouseenter", mouseEnter));
+buttons.forEach(button => button.addEventListener("mouseleave", mouseLeave));
+buttons.forEach(button => button.addEventListener("click", onClick));
+gameButton.addEventListener('click', gameStarter);
+
+
+/*Function Built for First Part of Exercise*/
 function game() {
   gamesPlayed = 0;
   playerScore = 0;
@@ -84,34 +97,17 @@ function caseChanger(word) {
   return wordArray.join("");
 }
 
-
-
-const buttons = document.querySelectorAll('.btn');
-const result = document.querySelector('h2#result');
-const playerScoreDisplay = document.querySelector("#player");
-const computerScoreDisplay = document.querySelector('#computer');
-const gameButton = document.querySelector('#gameStart button');
-let gameStarted = false;
-
-
-
-
-
-buttons.forEach(button => button.addEventListener("mouseenter", mouseEnter));
-buttons.forEach(button => button.addEventListener("mouseleave", mouseLeave));
-buttons.forEach(button => button.addEventListener("click", onClick));
-
-gameButton.addEventListener('click', gameStarter);
-
+/*Hovered Buttons*/
 function mouseEnter(e) {
   if (gameStarted) {
     e.target.classList.add('hovered');
   }
-
 }
+/*Hovered Buttons*/
 function mouseLeave(e) {
   e.target.classList.remove('hovered');
 }
+/*Gameplay*/
 function onClick(e) {
   if (gameStarted) {
     let playerSelection;
@@ -124,24 +120,23 @@ function onClick(e) {
       playerSelection = e.target.getAttribute('id');
     }
     buttonClicked.classList.toggle('active');
-
     result.textContent = playRound(playerSelection);
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
     buttonClicked.classList.toggle('active');
   }
-  if ((playerScore + computerScore) == 5) {
+  if ((playerScore == 5) || (computerScore == 5)) {
     if (playerScore > computerScore) {
-      result.textContent = "You won!";
+      result.textContent = "You won this round!";
     } else {
-      result.textContent = "You lost.";
+      result.textContent = "You lost this round.";
     }
     gameButton.textContent = "Play Again!";
     gameButton.style.cssText = "display: inline";
     gameStarted = false;
   }
-
 }
+
 function gameStarter(e) {
   e.target.style.cssText = "display: none";
   playerScore = 0;

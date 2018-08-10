@@ -1,6 +1,7 @@
 body {
   background: #e1f9ff;
   font-family: 'Nunito', sans-serif;
+  color: #002b2e;
 }
 h1 {
   font-size: 2.8em;
@@ -56,14 +57,13 @@ header {
   transform: scale(1.2);
   color: #fe6d5f;
 }
-.btn.active i {
-
-}
 div#result {
   display: none;
 }
 #result h2 {
   text-align: center;
+  transition: all .07s ease;
+  -webkit-transition: all .09s ease;
 }
 div#scoreBoard {
   display: none;
@@ -92,7 +92,6 @@ table, th, td {
   padding: 10px 10px;
   width: 100px;
 }
-
 #gameStart {
   text-align: center;
 }
@@ -103,8 +102,15 @@ table, th, td {
   border: 1px solid #47ffca;
   border-radius: 5px;
   margin-top: 40px;
-
 }
 #gameStart button:hover, #gameStart button:active {
   background-color: #47ffca;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  background: #93b2ff;
 }
